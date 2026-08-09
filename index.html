@@ -255,12 +255,17 @@ botonhp.addEventListener("click", function() {
     let hpp4 = parseInt(hp4.value);
     let hpp5 = parseInt(hp5.value);
     let hpTotal = hpp1 + hpp2 + hpp3 + hpp4 + hpp5;
+    if (hpTotal >= 501 || hpTotal <= -501) {
+        resultadohp.innerHTML = "EL HP TOTAL NO PUEDE SER MAS DE 100 NI MENOS DE -100"
+        resultadohp.style.color = "red"
+    } else {
     
     promedioGlobalHP = hpTotal / 5;
     resultadohp.innerHTML = promedioGlobalHP + " HP";
     resultadohp.style.color = "black"
     resultadoFinalHP.innerHTML = promedioGlobalHP + " HP";
     hpCalculado = true;
+    }
 });
 finalBoton.addEventListener("click", function() {
     if (tierCalculado === false || acurrateCalculado === false || hpCalculado === false) {
@@ -306,6 +311,9 @@ finalBoton.addEventListener("click", function() {
     resultadoFINAL.innerHTML = nombreFinal + " (" + tierTotalReal + " PUNTOS)";
     resultadoFINAL.style.color = "black";
 });
+</script>
+</body>
+</html>
 </script>
 </body>
 </html>
